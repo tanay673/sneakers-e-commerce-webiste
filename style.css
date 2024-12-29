@@ -1,0 +1,665 @@
+html {
+  scroll-behavior: smooth; /* when we click on the buy now button it will take us down to selection page by setting scroll behaviour it make a smooth transition */
+}
+
+body {
+  font-family: Lato, sans-serif;
+  padding: 0;
+  margin: 0;
+}
+
+nav {
+  background-color: black;
+  color: white;
+  padding: 20px 50px;
+}
+
+.navTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  background-color: gray;
+  padding: 10px 20px;
+  border-radius: 10px;
+}
+
+.searchIcon{
+  padding-left: 5px;
+}
+
+.searchInput {
+  border: none;
+  background-color: transparent;
+  padding: 0px, 0px, 2px, 0px;
+}
+
+.searchInput::placeholder {
+  color: lightgray;
+}
+
+.limitedOffer {
+  font-size: 20px;
+  border-bottom: 2px solid green;
+  cursor: pointer;
+}
+
+.navBottom {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.menuItem {
+  margin-right: 50px;
+  cursor: pointer;
+  color: lightgray;
+  font-weight: 500;
+}
+
+.slider {
+  background: url(https://images.unsplash.com/photo-1604147495798-57beb5d6af73?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 85%);
+  overflow: hidden; /*eleminates the horizontal scroll bar*/
+}
+
+.sliderWrapper {
+  display: flex;
+  width: 500vw; /*increases the widht of the screen*/
+  transition: all 1.5s ease-in-out;
+}
+
+.sliderItem {
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.sliderBg {
+  height: 750px;
+  width: 750px;
+  border-radius: 50%;
+  position: absolute;
+  /* background-color: greenyellow; */
+  /* backdrop-filter: blur(2px); */
+
+}
+
+.sliderImage {
+  z-index: 1;
+}
+
+.sliderTitle {
+  position: absolute;
+  top: 10%;
+  right: 10%;
+  font-size: 60px;
+  font-weight: 900;
+  text-align: center;
+  color: white;
+  z-index: 1;
+}
+
+.sliderPrice {
+  position: absolute;
+  left: 10%;
+  top: 10%;
+  font-size: 60px;
+  font-weight: 300;
+  text-align: center;
+  color: white;
+  border: 1px solid grey;
+  z-index: 1;
+}
+
+.buyButton {
+  position: absolute;
+  right: 10%;
+  top: 50%;
+  font-size: 30px;
+  font-weight: 900;
+  color: white;
+  border: 1px solid grey;
+  background-color: black;
+  z-index: 1;
+  cursor: pointer;
+}
+
+.buyButton:hover {
+  background-color: white;
+  color: black;
+}
+
+.sliderItem:nth-child(1) .sliderBg {
+  /*targets the first slider item*/
+ 
+  background: rgb(0 0 0);
+  box-shadow: inset 0px 0px 200px 100px rgb(60 133 124);
+}
+
+.sliderItem:nth-child(2) .sliderBg {
+  background: rgb(0 0 0);
+  box-shadow: inset 0px 0px 200px 100px rgb(119 229 255);
+}
+
+.sliderItem:nth-child(3) .sliderBg {
+  background: rgb(0 0 0);
+  box-shadow: inset 0px 0px 200px 100px rgb(81 194 180);
+}
+
+.sliderItem:nth-child(4) .sliderBg {
+  background: rgb(0 0 0);
+  box-shadow: inset 0px 0px 200px 100px rgb(177 104 255);
+}
+
+.sliderItem:nth-child(5) .sliderBg {
+  background: rgb(0 0 0);
+  box-shadow: inset 0px 0px 200px 100px rgb(255 121 128);
+}
+
+.sliderItem:nth-child(1) .sliderPrice {
+  /*targets the first child of the sliderprice*/
+  color: rgb(60 133 124)
+}
+
+.sliderItem:nth-child(2) .sliderPrice {
+  color:rgb(119 229 255)
+}
+
+.sliderItem:nth-child(3) .sliderPrice {
+  color: rgb(81 194 180)
+}
+
+.sliderItem:nth-child(4) .sliderPrice {
+  color: rgb(177 104 255);
+}
+
+.sliderItem:nth-child(5) .sliderPrice {
+  color: rgb(255 121 128);
+}
+
+.features {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.feature {
+  display: flex;
+  flex-direction: column;
+  padding: 50px;
+  align-items: center;
+  text-align: center;
+}
+
+.featureImage {
+  width: 50px;
+  height: 50px;
+}
+
+.featureTitle {
+  font-size: 20px;
+  font-weight: 600;
+  margin: 20px;
+}
+
+.featureDiscription {
+  color: grey;
+  width: 50%;
+  height: 100px;
+}
+
+.product {
+  height: 100vh;
+  background-color: whitesmoke;
+  position: relative;
+  clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%);
+}
+
+/* fade in animation for payments */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.payment {
+  width: 500px;
+  height: 500px;
+  background-color: white;
+  position: absolute;
+
+  /* centering the payemnt  */
+
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  padding: 10px 50px;
+  display: none; /*this helps to initially hide the display and when we chnage it to flex as soon as someone clicks the pay button*/
+  flex-direction: column;
+  box-shadow: 0px 0px 39px -5px rgba(0, 0, 0, 0.99);
+  animation: fadeIn 0.2s;
+}
+
+.payTitle {
+  font-size: 20px;
+  color: rgb(186, 186, 186);
+}
+
+label {
+  font-size: 14px;
+  font-weight: 300;
+}
+
+.payInput {
+  padding: 10px;
+  margin: 10px 0px;
+  border: none;
+  border-bottom: 1px solid gray;
+}
+
+.payInput::placeholder {
+  color: rgb(172, 171, 171);
+}
+
+.cardIcons {
+  display: flex;
+}
+
+.cardIcon {
+  display: flex;
+  width: 40px;
+  margin-right: 10px;
+}
+
+.cardInfo {
+  display: flex;
+  justify-content: space-between;
+}
+
+.sm {
+  width: 25%;
+}
+
+.payButton {
+  position: absolute;
+  height: 40px;
+  bottom: -40px;
+  width: 100%;
+  left: 0;
+  box-shadow: 0px 0px 17px -2px rgba(0, 0, 0, 0.75);
+  border: none;
+  background-color: rgb(40, 223, 40);
+  cursor: pointer;
+}
+
+.payButton:active {
+  background-color: #45a049; /* Color when button is clicked */
+}
+
+.close {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  background-color: rgb(186, 176, 176);
+  color: whitesmoke;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 10px;
+  right: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 2px;
+}
+
+.productImage {
+  width: 45%;
+}
+
+.productDetails {
+  position: absolute;
+  top: 10%;
+  right: 0px;
+  width: 40%;
+  padding: 50px;
+}
+
+.productTitle {
+  font-size: 75px;
+  font-weight: 900;
+}
+
+.productDescription {
+  color: gray;
+  /* font-size: 24px; */
+}
+
+.colors,
+.sizes {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.color {
+  width: 32px;
+  height: 32px;
+  border-radius: 5px;
+  background-color: black;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.color:last-child {
+  background-color: darkblue;
+}
+
+.size {
+  padding: 5px 20px;
+  border: 1px solid black;
+  margin-right: 10px;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.productButton {
+  float: right;
+  padding: 10px 20px;
+  background-color: black;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.productButton:hover {
+  color: black;
+  background-color: white;
+}
+
+.gallery {
+  padding: 50px;
+  display: flex;
+}
+
+.galleryItem {
+  flex: 1;
+  padding: 50px;
+}
+
+.galleryImage {
+  width: 100%;
+}
+
+.newSeason {
+  display: flex;
+}
+
+.newSeasonItem {
+  flex: 1;
+  background-color: #0f112e;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.newSeasonImage {
+  width: 100%;
+  height: 600px;
+}
+
+.newSeasonTitle {
+  font-size: 60px;
+}
+
+.newSeasonTitleSm {
+  font-size: 40px;
+}
+
+body > div.newSeason > div:nth-child(2) > h3 {
+  margin-bottom: 0px;
+}
+
+.newSeasonButton {
+  height: 50px;
+  width: 200px;
+  /* display: grid;*/
+  place-content: center;
+  color: white;
+  text-shadow: 0 1px 0 #000;
+
+  --border-angle: 0turn; /* For animation. */
+  --main-bg: conic-gradient(
+    from var(--border-angle),
+    #213,
+    #112 5%,
+    #112 60%,
+    #213 95%
+  );
+
+  border: solid 5px transparent;
+  border-radius: 2em;
+  --gradient-border: conic-gradient(
+    from var(--border-angle),
+    transparent 25%,
+    #08f,
+    #f03 99%,
+    transparent
+  );
+
+  background: 
+    /* padding-box clips this background into the overall element except the border. */ var(
+        --main-bg
+      )
+      padding-box,
+    /* border-box extends this background to the border space */
+      var(--gradient-border) border-box,
+    /* Duplicate main background to fill in behind the gradient border. */
+      var(--main-bg) border-box;
+
+  background-position: center center;
+
+  animation: bg-spin 3s linear infinite;
+}
+
+@keyframes bg-spin {
+  to {
+    --border-angle: 1turn;
+  }
+}
+
+@property --border-angle {
+  syntax: "<angle>";
+  inherits: true;
+  initial-value: 0turn;
+}
+
+footer {
+  display: flex;
+}
+
+.footerLeft {
+  flex: 2;
+  display: flex;
+  justify-content: space-between;
+  padding: 50px;
+}
+
+.footerMenuTitle {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.fMenuList {
+  padding: 0px;
+  list-style: none;
+}
+
+.fMenuItems {
+  margin-bottom: 10px;
+  color: gray;
+  cursor: pointer;
+}
+
+.footerRight {
+  flex: 1;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.fInput {
+  padding: 5px;
+}
+
+.fButton {
+  padding: 5px;
+  background-color: black;
+  color: white;
+}
+
+.fIcons {
+  display: flex;
+}
+
+.fIcon {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+
+.copyright {
+  font-weight: 300;
+  font-size: 14px;
+}
+
+/* test */
+
+@media screen and (min-width: 400px) and (max-width: 1034px) {
+  nav {
+    padding: 20px;
+  }
+
+  .search {
+    display: none;
+  }
+
+  .navBottom {
+    flex-wrap: wrap;
+  }
+
+  .menuItem {
+    margin: 20px;
+    font-weight: 700px;
+    font-size: 20px;
+  }
+
+  .slider {
+    clip-path: none;
+  }
+
+  .sliderImage {
+    width: 90%;
+  }
+
+  .sliderBg {
+    width: 100%;
+    height: 100%;
+  }
+
+  .sliderTitle {
+    display: none;
+  }
+
+  .sliderPrice {
+    top: unset;
+    bottom: -50px;
+    left: 0px;
+    background-color: lightgray;
+  }
+
+  .buyButton {
+    right: 0px;
+    top: 0px;
+  }
+
+  .features {
+    flex-direction: column;
+  }
+
+  .product {
+    clip-path: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 110%;
+  }
+
+  .productImage {
+    width: 80%;
+  }
+
+  .productDetails {
+    width: 100%;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    top: 0;
+  }
+
+  .productTitle {
+    font-size: 50px;
+    margin: 0;
+  }
+
+  .gallery {
+    display: none;
+  }
+
+  .newSeason {
+    flex-direction: column;
+  }
+
+  .nsItem:nth-child(2) {
+    padding: 50px;
+  }
+
+  footer {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footerLeft {
+    padding: 20px;
+    width: 90%;
+  }
+
+  .footerRight {
+    padding: 20px;
+    width: 90%;
+    align-items: center;
+    background-color: whitesmoke;
+  }
+
+  .payment {
+    width: 90%;
+    padding: 20px;
+  }
+}
